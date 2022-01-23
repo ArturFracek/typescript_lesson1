@@ -1,5 +1,24 @@
 {
   "devDependencies": {
+    "lite-server": "^2.6.1",
     "typescript": "^4.5.4"
-  }
+  },
+  "name": "typescript_lesson1",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturFracek/typescript_lesson1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArturFracek/typescript_lesson1/issues"
+  },
+  "homepage": "https://github.com/ArturFracek/typescript_lesson1#readme"
 }
