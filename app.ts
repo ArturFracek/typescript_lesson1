@@ -1,5 +1,7 @@
+//tworzymy własny typ danych stworzony z 2ch typów
+type Combinable = number | string
 // union types adn literral types
-function combine(input1: number | string, input2: number | string, resultConversion: string) {
+function combine(input1: Combinable, input2: Combinable, resultConversion: "as-number" | "as-text") {
   let result
   //dzięki paramentrowi resultConversion, możemy sami określić jakim typ danych ma zostać zwrócony
   if(typeof input1 === "number" && typeof input2 === "number" || resultConversion === "as-number") {
