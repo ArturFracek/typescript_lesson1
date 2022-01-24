@@ -1,29 +1,19 @@
-//tworzymy własny typ danych stworzony z 2ch typów
-type Combinable = number | string
-// union types adn literral types
-function combine(input1: Combinable, input2: Combinable, resultConversion: "as-number" | "as-text") {
-  let result
-  //dzięki paramentrowi resultConversion, możemy sami określić jakim typ danych ma zostać zwrócony
-  if(typeof input1 === "number" && typeof input2 === "number" || resultConversion === "as-number") {
-    result = +input1 + +input2;
-  } else {
-    result = input1.toString() + input2.toString();
-  }
-  return result
-  // if (resultConversion === "as-number") {
-  //   return +result
-  // }
-  // else {
-  //   return result.toString()
-  // }
-  
+function adding(n1: number, n2: number) {
+  return n1 + n2
+}
+// typ Void - znaczy ze nic nie zwracamy i wtedy tez nalezy uzywac void!
+function printingResult(num: number) {
+  console.log("Result: " + num)
 }
 
-const combinedAges = combine(30, 20, "as-number")
-console.log(combinedAges)
+printingResult(adding(5, 12))
 
-const combinedNames = combine('Max', "Anna", "as-text");
-console.log(combinedNames)
 
-const combinedStringAges = combine("30", "20", "as-number")
-console.log(combinedStringAges)
+// combineValues powinna być typu "funkcja" i przyjmować dwa parametry o typie number, i zwracać tez typ number
+let combineValues: (a: number, b: number) => number;
+
+combineValues = adding;
+// combineValues = printingResult // nie zadziała, ponieważ funkcja printingResult przyjmuje jeden parametr (ading())
+//  więc nie spełnia warunu typów parametrów
+
+console.log(combineValues(8, 8))
