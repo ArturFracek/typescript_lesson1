@@ -1,5 +1,6 @@
-var userInput;
-var userName;
+"use strict";
+let userInput;
+let userName;
 userInput = 5;
 userInput = 'Max';
 //gdyby nie było ifa i tego warunku, pojawiłby się error, ponieważ 
