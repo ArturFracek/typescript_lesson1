@@ -67,12 +67,22 @@ class Person {
         return `${this.name} is ${this.age} years old`;
     }
 }
-//extending the class
+//extending the class and its called Subclass
 class Employeeee extends Person {
-    constructor(pid, name, age, isCool, position) {
+    constructor(pid, name, age, position, isCool) {
         super(pid, name, age, isCool);
         this.position = position;
     }
 }
-const employer1 = new Employeeee(3, "Artur", 9, true, "Front-end Developer");
-console.log(employer1);
+const employer1 = new Employeeee(3, "Artur", 9, "Front-end Developer");
+const employer2 = new Employeeee(6, "Janusz", 15, "Front-end Developer", false);
+// console.log(employer1) // -> we dont pass isCool because its optional. but its there, as undefined
+// console.log(employer2) // -> we pass isCool and everything is working, optional values must come last !
+////////////////////////////////////////////Generics
+function getArr(items) {
+    // eslint-disable-next-line @typescript-eslint/no-array-constructor
+    return new Array().concat(items);
+}
+let numArr = getArr([1, 2, 3, 4, 5]);
+let strArray = getArr(["John", "Artur", "Szpinak"]);
+//strArray.push(2) => now u cant push number to strArray and vice versa
